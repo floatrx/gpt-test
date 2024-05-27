@@ -9,7 +9,7 @@
     "bracketSpacing": true,
     "endOfLine": "lf",
     "plugins": ["@trivago/prettier-plugin-sort-imports"],
-    "importOrder": ["^(express|openai)", "<THIRD_PARTY_MODULES>", "@/types", "^[./]"],
+    "importOrder": ["^(express|openai|node)", "<THIRD_PARTY_MODULES>", "@/types", "^[./]"],
     "importOrderSeparation": true,
     "importOrderGroupNamespaceSpecifiers": true,
     "importOrderSortSpecifiers": true,
