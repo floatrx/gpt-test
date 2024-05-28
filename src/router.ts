@@ -1,10 +1,12 @@
 import { Router } from 'express';
 
+import { delay } from '@/lib/delay';
 import { botService } from '@/services/bot';
 
 export const router = Router()
   // Welcome route
-  .get('/test', (_req, res) => {
+  .get('/test', async (_, res) => {
+    await delay(1000);
     res.status(200).send('👋 Express server!');
   })
   // Bot routes
