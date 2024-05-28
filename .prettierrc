@@ -8,6 +8,7 @@
     "bracketSameLine": false,
     "bracketSpacing": true,
     "endOfLine": "lf",
+    "jsxSingleQuote": false,
     "plugins": ["@trivago/prettier-plugin-sort-imports"],
     "importOrder": ["^(express|openai|node)", "<THIRD_PARTY_MODULES>", "@/types", "^[./]"],
     "importOrderSeparation": true,
@@ -15,7 +16,7 @@
     "importOrderSortSpecifiers": true,
     "overrides": [
         {
-            "files": ["*.{js,ts,json,yml}"],
+            "files": ["*.{js,ts,jsx,tsx,json,yml}"],
             "options": {
                 "tabWidth": 2,
                 "singleQuote": true,

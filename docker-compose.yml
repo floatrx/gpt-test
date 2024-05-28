@@ -1,5 +1,6 @@
 services:
   app:
+    image: floatrx/gpt-test:latest
     build: .
     volumes:
       - .:/usr/src/app

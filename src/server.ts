@@ -19,7 +19,7 @@ const app = express();
 app.use(express.json()); // parse application/json
 
 // Serve static site
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../demo/dist')));
 
 // Throttle requests
 app.use(

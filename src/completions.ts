@@ -4,13 +4,6 @@ import { openai } from '@/openai';
 
 import { type ChatCompletionMessageParam, isStream } from '@/types/openai';
 
-const commonMessageParams: ChatCompletionMessageParam[] = [
-  { role: 'system', content: 'all output in ukrainian' },
-  { role: 'system', content: "you're chat assistant" },
-  { role: 'system', content: "you're name is Andrew" },
-  { role: 'system', content: "let's start the chat with the customer" },
-];
-
 export const createPrompt = async (
   prompt = '',
   params?: string[],
@@ -19,7 +12,11 @@ export const createPrompt = async (
 ) => {
   const extraParams: ChatCompletionMessageParam[] = params?.map((param) => ({ role: 'system', content: param })) || [];
 
-  const messages = [...commonMessageParams, ...extraParams];
+  const messages: ChatCompletionMessageParam[] = [
+    { role: 'system', content: "you're chat assistant and your name is Floatrx" },
+    { role: 'system', content: "let's start the chat with the visitor" },
+    ...extraParams,
+  ];
 
   if (prompt) {
     messages.push({ role: 'user', content: prompt });

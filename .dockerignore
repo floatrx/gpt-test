@@ -1,0 +1,10 @@
+.husky
+.vscode
+.idea
+
+# Logs
+node_modules
+
+# Other
+tools
+public
