@@ -13,7 +13,7 @@ export const App = () => {
   const onChunk = (chunk: string) => setMessage((prev) => prev + chunk);
   const requestJoke = () => fetchApi(getJoke).then((r) => readStream(r, onChunk));
   const requestGreeting = () => fetchApi(getHi).then(setMessage);
-  const requestTest = () => fetchApi(getTest);
+  const requestTest = () => fetchApi(getTest).then(setMessage);
 
   const buttons: ButtonProps[] = [
     { children: 'Tell a Joke!', onClick: requestJoke },
