@@ -7,11 +7,11 @@
  */
 import express from 'express';
 import { rateLimit } from 'express-rate-limit';
+import path from 'node:path';
 
 import { ONE_MINUTE, PORT, REQUESTS_LIMIT } from '@/config';
 import { mainErrorHandler, notFound, syntaxErrorHandler } from '@/middleware/errors';
 import { router } from '@/router';
-import path from 'node:path';
 
 const app = express();
 
@@ -25,6 +25,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(
   rateLimit({
     windowMs: ONE_MINUTE,
+    statusCode: 429,
+    skip: (req) => req.hostname === 'localhost',
     limit: REQUESTS_LIMIT, // limit each IP to 15 requests per windowMs
     message: 'Too many requests from this IP, please try again after a few minutes',
   }),
