@@ -14,7 +14,7 @@
     "dev": "bun --watch index.ts",
     "docker:build": "bun tools/docker.ts --build",
     "docker:run": "bun tools/docker.ts --run",
-    "docker:publish": "bun tools/docker.ts --publish",
+    "docker:push": "bun tools/docker.ts --push",
     "pretty": "prettier --write .",
     "prepare": "husky"
   },
