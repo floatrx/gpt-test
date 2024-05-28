@@ -16,7 +16,7 @@ const methods = {
     res.setHeader('Content-Type', 'text/plain');
     res.setHeader('Transfer-Encoding', 'chunked');
 
-    await createPrompt('say a joke', [], true, (content) => {
+    await createPrompt('say a long joke', [], true, (content) => {
       res.write(content);
     });
 
